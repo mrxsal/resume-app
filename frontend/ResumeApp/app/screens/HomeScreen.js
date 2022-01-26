@@ -1,10 +1,41 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, StyleSheet } from 'react-native';
+import {
+    ScrollView,
+    VStack,
+    Text, 
+    Button,
+    Center,
+    useTheme,
+    Heading,
+    NativeBaseProvider,
+  } from "native-base"
 
-function HomeScreen() {
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center'
+  },
+  title: {
+    margin: 20,
+  }
+
+})
+
+function HomeScreen({navigation}) {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
+    <View style={styles.container}>
+      <Text style={styles.title} color="primary.900">Home Screen</Text>
+      <Button 
+        title="Go to About Saleh"
+        onPress={() => navigation.navigate('AboutMe')}
+        backgroundColor='primary.800'
+        style={styles.button}> Check out this Booking Journey</Button>
+      {/* <Button 
+        title="My Profile"
+        onPress={() => navigation.navigate('Profile')}
+      /> */}
     </View>
   );
 }

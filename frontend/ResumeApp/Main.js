@@ -1,12 +1,15 @@
 import React from 'react';
-import { View, StatusBar, Text } from 'react-native';
-import Navigator from './app/navigation/Navigator';
+import { NativeBaseProvider, Text, ScrollView } from 'native-base';
+// import Navigator from './app/navigation/Navigator';
+import MainDrawer from './app/navigation/MainDrawer';
+import MainTheme from './app/themes/MainTheme';
 
 const Main = () => {
   return (
-    <Navigator> 
-
-    </Navigator>
+    <NativeBaseProvider theme={MainTheme}>
+        <MainDrawer />
+        {/* <Navigator /> */}
+    </NativeBaseProvider>
   )
 }
 export default Main;
